@@ -1,11 +1,11 @@
-##Solution Discussion
+## Solution Discussion
 This was my first attempt at one of the kickstart problems and it can be found at https://codingcompetitions.withgoogle.com/kickstart/round/0000000000051060/0000000000058b89. The problem desctiption was copied from there and added to the problem section below.
 
 My solution is based on the idea that we can guarantee about half (rounded up) of the wall since after each day of painting, one wall will be lost. The solution uses a sliding window approach to look at every possible array the size of one half of the original array without having to continually access every item in the array.
 
 While this solution did pass the kickstart tests, I had a great conversation with Evan where he demonstrated that we might not be able to "guarantee" half of the wall. In a situation where the destructuve side was adversarial, meaning that the order in which the walls are destroyed is the worst case order for our solution, our solution would actually not work. 
 
-##Problem
+## Problem
 Thanh wants to paint a wonderful mural on a wall that is N sections long. Each section of the wall has a beauty score, which indicates how beautiful it will look if it is painted. Unfortunately, the wall is starting to crumble due to a recent flood, so he will need to work fast!
 
 At the beginning of each day, Thanh will paint one of the sections of the wall. On the first day, he is free to paint any section he likes. On each subsequent day, he must paint a new section that is next to a section he has already painted, since he does not want to split up the mural.
@@ -14,26 +14,26 @@ At the end of each day, one section of the wall will be destroyed. It is always 
 
 The total beauty of Thanh's mural will be equal to the sum of the beauty scores of the sections he has painted. Thanh would like to guarantee that, no matter how the wall is destroyed, he can still achieve a total beauty of at least B. What's the maximum value of B for which he can make this guarantee?
 
-##Input
+## Input
 The first line of the input gives the number of test cases, T. T test cases follow. Each test case starts with a line containing an integer N. Then, another line follows containing a string of N digits from 0 to 9. The i-th digit represents the beauty score of the i-th section of the wall.
 
-##Output
+## Output
 For each test case, output one line containing Case #x: y, where x is the test case number (starting from 1) and y is the maximum beauty score that Thanh can guarantee that he can achieve, as described above.
 
-##Limits
+## Limits
 
 1 ≤ **T** ≤ 100.
 Time limit: 20 seconds per test set.
 Memory limit: 1 GB.
 
-####Small dataset (Test set 1 - Visible)
+#### Small dataset (Test set 1 - Visible)
 2 ≤ **N** ≤ 100.
 
-####Large dataset (Test set 2 - Hidden)
+#### Large dataset (Test set 2 - Hidden)
 For exactly 1 case, N = 5 × 106; for the other T - 1 cases, 2 ≤ N ≤ 100.
 Sample
 
-####Input
+#### Input
 4
 4
 1332
@@ -44,7 +44,7 @@ Sample
 10
 1029384756
 
-####Output 
+#### Output 
 Case #1: 6
 Case #2: 14
 Case #3: 7
