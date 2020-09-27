@@ -2,6 +2,8 @@
 #include <string>
 #include <math.h>
 #include <queue>
+#include <map>
+#include <set>
 
 using namespace std;
 
@@ -23,34 +25,18 @@ int main()
     exit(EXIT_SUCCESS);
 }
 
-struct person
-{
-    int index;
-    int amt;
-};
-
 void atm(int N, int X)
 {
-    queue<person> line;
-    queue<person> result;
+    multimap<double, int> values;
     for (int i = 0; i < N; ++i)
     {
-        int amt;
+        double amt;
         cin >> amt;
-        person new_person;
-        new_person.amt = amt;
-        new_person.index = i + 1;
-        line.push(new_person);
+        amt = ceil(amt/X);
+        values.insert(make_pair(amt, i+1));
+        
     }
 
-    while(!line.empty())
-    {
-        person current_person = line.front();
-        line.pop();
-        current_person.amt -= X;
-        if(current_person.amt <= 0)
-            cout << " " << current_person.index;
-        else
-            line.push(current_person);
-    }
+    for(auto iter = values.begin(); iter!=values.end(); ++iter)
+        cout << " " << iter->second;
 }
